@@ -1,8 +1,7 @@
 with open('input1', 'r') as f:
     pairs = f.read()
 
-pairs = [pair.split('   ') for pair in pairs.splitlines()]
-pairs = [(int(pair[0]), int(pair[1])) for pair in pairs]
+pairs = [[int(num) for num in pair.split()] for pair in pairs.splitlines()]
 left = [x for x, _ in pairs]
 right = [y for _, y in pairs]
 left.sort()
